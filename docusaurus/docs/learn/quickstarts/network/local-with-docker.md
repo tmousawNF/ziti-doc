@@ -100,7 +100,7 @@ docker run \
   -v ~/docker-volume/myFirstZitiNetwork:/persistent/pki \
   -v ~/docker-volume/myFirstZitiNetwork/ziti.env:/persistent/ziti.env \
   openziti/quickstart \
-  /var/openziti/scripts/run-with-ziti-cli.sh  /var/openziti/scripts/access-control.sh
+  /var/openziti/scripts/run-with-ziti-cli.sh /var/openziti/scripts/access-control.sh
 ```
 
 ## Edge Router
@@ -190,7 +190,11 @@ And finally, once authenticated I can test to see if the edge router is online i
 
 ```bash
 ziti@a33d58248d6e:/persistent$ ziti edge list edge-routers
-id: qNZyqZEix3    name: ziti-edge-router    isOnline: true    role attributes: {}
+╭────────────┬────────────────────┬────────┬───────────────┬──────┬────────────╮
+│ ID         │ NAME               │ ONLINE │ ALLOW TRANSIT │ COST │ ATTRIBUTES │
+├────────────┼────────────────────┼────────┼───────────────┼──────┼────────────┤
+│ qNZyqZEix3 │ ziti-edge-router   │ true   │ true          │    0 │ public     │
+╰────────────┴────────────────────┴────────┴───────────────┴──────┴────────────╯
 results: 1-1 of 1
 ```
 
